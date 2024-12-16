@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrivimi</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    }
+
+    h1 {
+      font-size: 3rem;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 1rem 2rem;
+      border-radius: 10px;
+    }
+
+    a {
+      color: #ffd700;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1><a href="mailto:davide@ilcetti.it">Scrivimi</a></h1>
+
+  <script>
+    // Array di immagini dirette da Flickr
+    const images = [
+      "https://live.staticflickr.com/3671/9676036420_dfb1ab68f4_b.jpg",
+      "https://live.staticflickr.com/6174/6069867245_c1d60cb7c5_b.jpg",
+      "https://live.staticflickr.com/4037/4543755312_b5fa82c0d6_b.jpg",
+      "https://live.staticflickr.com/2475/3689675381_d50c5791f8_b.jpg",
+      "https://live.staticflickr.com/3586/3369696499_9d019f8a65_b.jpg",
+      "https://live.staticflickr.com/3135/3240474387_8271abf4c6_b.jpg"
+    ];
+
+    // Seleziona un'immagine casuale
+    const randomImage = images[Math.floor(Math.random() * images.length)];
+
+    // Imposta l'immagine come sfondo
+    document.body.style.backgroundImage = `url('${randomImage}')`;
+  </script>
+</body>
+</html>
