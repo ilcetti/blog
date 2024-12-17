@@ -39,7 +39,7 @@
   </style>
 </head>
 <body>
-  <h1><a href="https://blog.ilcetti.it" id="blog-link">Blog</a></h1>
+  <h1 class="blog"><a href="https://blog.ilcetti.it" id="blog-link">Blog</a></h1>
   <h1><a href="mailto:davide@ilcetti.it">Write me</a></h1>
 
   <script>
@@ -66,7 +66,7 @@
       hue += 30;  // Incrementa la tonalità di 30° ogni 5 secondi
       if (hue >= 360) hue = 0;  // Se hue supera 360°, ricomincia da 0
 
-      // Applica il cambio di tonalità usando la proprietà CSS filter
+      // Applica il cambio di tonalità usando la proprietà CSS filter sul testo
       blogLink.style.filter = `hue-rotate(${hue}deg)`;
     }, 5000);  // Cambia ogni 5 secondi
   </script>
