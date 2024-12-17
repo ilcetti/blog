@@ -1,1 +1,1 @@
-a personal contac info
+a personal contact info
