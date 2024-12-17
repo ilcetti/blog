@@ -30,6 +30,7 @@
       color: #ffd700;
       text-decoration: none;
       font-weight: bold;
+      transition: color 0.3s;
     }
 
     a:hover {
@@ -38,7 +39,8 @@
   </style>
 </head>
 <body>
-  <h1><a href="mailto:u05vlnzpu@mozmail.com">Write me</a></h1>
+  <h1 class="blog"><a href="https://blog.ilcetti.it" id="blog-link">Blog</a></h1>
+  <h1><a href="mailto:davide@ilcetti.it">Write me</a></h1>
 
   <script>
     // Array di immagini dirette da Flickr
@@ -47,8 +49,7 @@
       "https://live.staticflickr.com/6182/6069867245_817617a708_k.jpg",
       "https://live.staticflickr.com/4062/4543755312_7c745525e2_k.jpg",
       "https://live.staticflickr.com/3589/3689675381_c5597f45e7_b.jpg",
-      "https://live.staticflickr.com/3448/3369696499_bdd6955a65_b.jpg",
-      "https://live.staticflickr.com/3533/3240474387_6ea467a500_b.jpg"
+      "https://live.staticflickr.com/3448/3369696499_bdd6955a65_b.jpg"
     ];
 
     // Seleziona un'immagine casuale
@@ -56,6 +57,18 @@
 
     // Imposta l'immagine come sfondo
     document.body.style.backgroundImage = `url('${randomImage}')`;
+
+    // Funzione per cambiare la tonalità del colore (hue) ogni 5 secondi
+    let hue = 0;  // Iniziamo con hue = 0 (rosso)
+    const blogLink = document.getElementById('blog-link');
+
+    setInterval(() => {
+      hue += 30;  // Incrementa la tonalità di 30° ogni 5 secondi
+      if (hue >= 360) hue = 0;  // Se hue supera 360°, ricomincia da 0
+
+      // Applica il cambio di tonalità usando la proprietà CSS filter
+      blogLink.style.filter = `hue-rotate(${hue}deg)`;
+    }, 5000);  // Cambia ogni 5 secondi
   </script>
 </body>
 </html>
