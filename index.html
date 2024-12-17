@@ -57,7 +57,7 @@
     // Imposta l'immagine come sfondo
     document.body.style.backgroundImage = `url('${randomImage}')`;
 
-    // Funzione per cambiare la tonalità del colore (hue) ogni 5 secondi
+    // Funzione per cambiare il colore (hue) del link ogni 5 secondi
     let hue = 0;  // Iniziamo con hue = 0 (rosso)
     const blogLink = document.getElementById('blog-link');
 
@@ -65,8 +65,8 @@
       hue += 30;  // Incrementa la tonalità di 30° ogni 5 secondi
       if (hue >= 360) hue = 0;  // Se hue supera 360°, ricomincia da 0
 
-      // Applica il cambio di tonalità usando la proprietà CSS filter sul testo
-      blogLink.style.filter = `hue-rotate(${hue}deg)`;
+      // Cambia il colore del testo del link con la tonalità HSL
+      blogLink.style.color = `hsl(${hue}, 100%, 50%)`;
     }, 5000);  // Cambia ogni 5 secondi
   </script>
 </body>
