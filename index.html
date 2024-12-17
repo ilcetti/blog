@@ -7,43 +7,55 @@
   <style>
     body {
       margin: 0;
-      padding: 1em;
-      display: flex;
-      justify-content: left;
-      align-items: flex-end;
-      height: 100vh;
+      padding: 1em 0 0 1em;
+      min-height: 97vh;
       background-size: cover;
       background-position: center;
       font-family: Arial, sans-serif;
       color: white;
       text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-start;
+      gap: 0.1rem;
     }
-
     h1 {
+      margin: 0;
       font-size: 3rem;
       background: rgba(0, 0, 0, 0.5);
       padding: 1rem 2rem;
       border-radius: 10px;
+      
     }
-
     a {
       text-decoration: none;
+      color:#efefef;
       font-weight: bold;
-      transition: color 0.3s;
+      transition: filter 0.3s;
     }
-
     a:hover {
       text-decoration: underline;
+    }
+    #blog-link {
+      color: green;
+      animation: hueRotate 10s linear infinite;
+    }
+    @keyframes hueRotate {
+      from {
+        filter: hue-rotate(0deg);
+      }
+      to {
+        filter: hue-rotate(360deg);
+      }
     }
   </style>
 </head>
 <body>
   <h1 class="blog"><a href="https://blog.ilcetti.it" id="blog-link">Blog</a></h1>
-  </br>
   <h1><a href="mailto:davide@ilcetti.it">Write me</a></h1>
 
   <script>
-    // Array di immagini dirette da Flickr
     const images = [
       "https://live.staticflickr.com/5460/9676036420_36043e1ee4_k.jpg",
       "https://live.staticflickr.com/6182/6069867245_817617a708_k.jpg",
@@ -51,24 +63,9 @@
       "https://live.staticflickr.com/3589/3689675381_c5597f45e7_b.jpg",
       "https://live.staticflickr.com/3448/3369696499_bdd6955a65_b.jpg"
     ];
-
-    // Seleziona un'immagine casuale
+    
     const randomImage = images[Math.floor(Math.random() * images.length)];
-
-    // Imposta l'immagine come sfondo
     document.body.style.backgroundImage = `url('${randomImage}')`;
-
-    // Funzione per cambiare il colore (hue) del link ogni 5 secondi
-    let hue = 0;  // Iniziamo con hue = 0 (rosso)
-    const blogLink = document.getElementById('blog-link');
-
-    setInterval(() => {
-      hue += 30;  // Incrementa la tonalità di 30° ogni 5 secondi
-      if (hue >= 360) hue = 0;  // Se hue supera 360°, ricomincia da 0
-
-      // Cambia il colore del testo del link con la tonalità HSL
-      blogLink.style.color = `hsl(${hue}, 100%, 50%)`;
-    }, 5000);  // Cambia ogni 5 secondi
   </script>
 </body>
 </html>
